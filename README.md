@@ -1,0 +1,3 @@
+# Ghosts Smelling Pacman
+
+Consider the following scenario: We have a large city modeled by polygons where many ghosts are moving around. They want to catch Pacman who is strolling around, leaving a fragrance behind him that dissipates over time. The ghosts can’t see Pacman so they need to smell him. As there are many ghosts and the game is interactive, the decision whether a ghost can smell Pacman has to be done fast. We therefore develop a data structure that ignores ghosts far away from Pacman. The input is a set of time steps each containing the positions of the ghosts and Pacman. We assume that the given positions are valid meaning that they are located outside of buildings. For each time step we output a list of ghosts which can smell Pacman.
