@@ -1,13 +1,12 @@
 package datastructures;
 
-import java.awt.Point;
-
 public class ApproximateDistanceFunction implements DistanceFunction {
 
 	@Override
-	public boolean isCloseEnough(Point p1, double radius1, Point p2, double radius2, Ghost ghost) {
+	public boolean isCloseEnough(Fragrance fragrance, int lineSegmentIndex, Ghost ghost) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 }
