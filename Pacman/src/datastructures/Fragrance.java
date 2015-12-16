@@ -16,6 +16,14 @@ public class Fragrance {
 		}
 	}
 	
+	public int getNumberOfPoints() {
+		return points.size();
+	}
+	
+	public Point getPoint(int index) {
+		return points.get(index);
+	}
+	
 	public double getSmellRadiusAtPoint(int index) {
 		if (index < 0 || index >= points.size()) throw new IllegalArgumentException();
 		return maxSmellRadius * index / (points.size() - 1);

@@ -17,7 +17,7 @@ public class GeometryUtil {
 	 * @param p the point to project
 	 * @return the parameter value of the projection of p to the line through a and b
 	 */
-	public double projectToLine(Point a, Point b, Point p) {
+	public static double projectToLine(Point a, Point b, Point p) {
 		// calculates the parameter with the following formula ("*" denotes the scalar product of two vectors):
 		// t = ((p-a)*(b-a)) / ((b-a)*(b-a)) = ((p-a)*(b-a)) / dist(a,b)^2
 		double xpa = p.getX() - a.getX();
@@ -37,7 +37,7 @@ public class GeometryUtil {
 	 * @param p the point to project
 	 * @return the parameter value of the closest point
 	 */
-	public double projectToSegment(Point a, Point b, Point p) {
+	public static double projectToSegment(Point a, Point b, Point p) {
 		double t = projectToLine(a, b, p);
 		if (t < 0) return 0;
 		if (t < 1) return 1;
@@ -51,7 +51,7 @@ public class GeometryUtil {
 	 * @param t the parameter value
 	 * @return the point on the line corresponding to t
 	 */
-	public Point getPointOnLine(Point a, Point b, double t) {
+	public static Point getPointOnLine(Point a, Point b, double t) {
 		double x = a.getX() + t * (b.getX() - a.getX());
 		double y = a.getY() + t * (b.getY() - a.getY());
 		return new Point((int) x, (int) y);
