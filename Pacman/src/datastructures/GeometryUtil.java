@@ -21,7 +21,7 @@ public class GeometryUtil {
 		// calculates the parameter with the following formula ("*" denotes the scalar product of two vectors):
 		// t = ((p-a)*(b-a)) / ((b-a)*(b-a)) = ((p-a)*(b-a)) / dist(a,b)^2
 		double xpa = p.getX() - a.getX();
-		double ypa = p.getY() - b.getY();
+		double ypa = p.getY() - a.getY();
 		double xba = b.getX() - a.getX();
 		double yba = b.getY() - a.getY();
 		return (xpa * xba + ypa * yba) / (xba * xba + yba * yba);
@@ -40,7 +40,7 @@ public class GeometryUtil {
 	public static double projectToSegment(Point a, Point b, Point p) {
 		double t = projectToLine(a, b, p);
 		if (t < 0) return 0;
-		if (t < 1) return 1;
+		if (t > 1) return 1;
 		return t;
 	}
 	
