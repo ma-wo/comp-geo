@@ -8,8 +8,12 @@ public class ExactDistanceFunction implements DistanceFunction {
 	public boolean isCloseEnough(Fragrance fragrance, int index, Ghost ghost) {
 		Point first = fragrance.getPoint(index);
 		Point second = fragrance.getPoint(index + 1);
-		double dist = first.distance(second);
 		
+		if (first.equals(second)) {
+			return ghost.getPosition().distance(second) < fragrance.getSmellRadiusAtPoint(index + 1);
+		}
+		
+		double dist = first.distance(second);
 		double firstSmellRadius = fragrance.getSmellRadiusAtPoint(index);
 		double secondSmellRadius = fragrance.getSmellRadiusAtPoint(index + 1);
 		
