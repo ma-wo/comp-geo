@@ -27,5 +27,13 @@ public class Pacman {
 		position = newPosition;
 		fragrance.addPoint(newPosition);
 	}
+	
+	public Point getPosition() {
+		return position;
+	}
+	
+	public Fragrance getFragrance() {
+		return fragrance;
+	}
 
 }
