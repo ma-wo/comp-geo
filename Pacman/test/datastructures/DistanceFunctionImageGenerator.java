@@ -22,7 +22,7 @@ public class DistanceFunctionImageGenerator {
 		String outputFileName = args[0];
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		
-		Fragrance fragrance = fragranceS();
+		Fragrance fragrance = fragrancePart();
 		
 		
 		for (int y = 0; y < height; y++) {
@@ -50,7 +50,14 @@ public class DistanceFunctionImageGenerator {
 		}
 		
 		ImageIO.write(image, "png", new File(outputFileName));
+		System.out.println("done");
 		
+	}
+	
+	private static Fragrance fragrancePart() {
+		Fragrance fragrance = new Fragrance(2, new Point(500, 350), 200);
+		fragrance.addPoint(new Point(500, 650));
+		return fragrance;
 	}
 	
 	private static Fragrance fragranceWithCorner() {
@@ -66,6 +73,20 @@ public class DistanceFunctionImageGenerator {
 		fragrance.addPoint(new Point(500, 200));
 		fragrance.addPoint(new Point(500, 500));
 		fragrance.addPoint(new Point(800, 500));
+		fragrance.addPoint(new Point(800, 200));
+		return fragrance;
+	}
+	
+	private static Fragrance fragranceSWithPauses() {
+		Fragrance fragrance = new Fragrance(11, new Point(200, 500), 140);
+		fragrance.addPoint(new Point(200, 200));
+		fragrance.addPoint(new Point(500, 200));
+		fragrance.addPoint(new Point(500, 500));
+		fragrance.addPoint(new Point(500, 500));
+		fragrance.addPoint(new Point(500, 500));
+		fragrance.addPoint(new Point(500, 500));
+		fragrance.addPoint(new Point(800, 500));
+		fragrance.addPoint(new Point(800, 200));
 		fragrance.addPoint(new Point(800, 200));
 		return fragrance;
 	}

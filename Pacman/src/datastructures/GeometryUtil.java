@@ -12,6 +12,10 @@ public class GeometryUtil {
 	 * Projects point p to the line through a and b and returns the parameter value of the projected point,
 	 * i.e. it returns the value t such that {@code a + t*(b-a) == projectedPoint}.
 	 * 
+	 * <p>
+	 * Note that {@link Double#NaN} is returned if the two points on the line are equal.
+	 * </p>
+	 * 
 	 * @param a the point on the line corresponding to a parameter value of 0
 	 * @param b the point on the line corresponding to a parameter value of 1
 	 * @param p the point to project
@@ -32,6 +36,10 @@ public class GeometryUtil {
 	 * the parameter value of the projected point, i.e. it returns the value t such that 
 	 * {@code a + t*(b-a) == closestPoint}. This value will always be between 0 and 1 (both inclusive).
 	 * 
+	 * <p>
+	 * Note that {@link Double#NaN} is returned if the two end points of the line seqment are equal.
+	 * </p>
+	 * 
 	 * @param a the end point corresponding to a parameter value of 0
 	 * @param b the end point corresponding to a parameter value of 1
 	 * @param p the point to project
@@ -46,6 +54,7 @@ public class GeometryUtil {
 	
 	/**
 	 * Returns the point on the line through a and b corresponding a given parameter value.
+	 * 
 	 * @param a the point on the line corresponding to a parameter value of 0
 	 * @param b the point on the line corresponding to a parameter value of 1
 	 * @param t the parameter value

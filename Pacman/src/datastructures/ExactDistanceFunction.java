@@ -8,21 +8,25 @@ public class ExactDistanceFunction implements DistanceFunction {
 	public boolean isCloseEnough(Fragrance fragrance, int index, Ghost ghost) {
 		Point first = fragrance.getPoint(index);
 		Point second = fragrance.getPoint(index + 1);
+		
+		if (first.equals(second)) {
+			return ghost.getPosition().distance(second) < fragrance.getSmellRadiusAtPoint(index + 1);
+		}
+		
 		double dist = first.distance(second);
+		double smallSmellRadius = fragrance.getSmellRadiusAtPoint(index);
+		double largeSmellRadius = fragrance.getSmellRadiusAtPoint(index + 1);
 		
-		double firstSmellRadius = fragrance.getSmellRadiusAtPoint(index);
-		double secondSmellRadius = fragrance.getSmellRadiusAtPoint(index + 1);
-		
-		double angle = Math.atan((secondSmellRadius - firstSmellRadius) / dist);
+		double angle = Math.asin((largeSmellRadius - smallSmellRadius) / dist);
 		double t = GeometryUtil.projectToLine(first, second, ghost.getPosition());
 		
-		double smallThreshold = - firstSmellRadius / dist * Math.sin(angle); 
-		double largeThreshold = 1.0 - secondSmellRadius / dist * Math.sin(angle);
+		double smallThreshold = - smallSmellRadius / dist * Math.sin(angle); 
+		double largeThreshold = 1.0 - largeSmellRadius / dist * Math.sin(angle);
 		
 		if (t <= smallThreshold) {
-			return first.distance(ghost.getPosition()) <= firstSmellRadius;
+			return first.distance(ghost.getPosition()) <= smallSmellRadius;
 		} else if (t >= largeThreshold) {
-			return second.distance(ghost.getPosition()) <= secondSmellRadius;
+			return second.distance(ghost.getPosition()) <= largeSmellRadius;
 		} else {
 			Point projection = GeometryUtil.getPointOnLine(first, second, t);
 			double smellRadiusAtProjection = ((1 - t) * fragrance.getSmellRadiusAtPoint(index) 
