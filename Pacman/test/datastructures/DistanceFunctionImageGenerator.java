@@ -22,7 +22,7 @@ public class DistanceFunctionImageGenerator {
 		String outputFileName = args[0];
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		
-		Fragrance fragrance = fragranceSWithPauses();
+		Fragrance fragrance = fragrancePart();
 		
 		
 		for (int y = 0; y < height; y++) {
@@ -50,7 +50,14 @@ public class DistanceFunctionImageGenerator {
 		}
 		
 		ImageIO.write(image, "png", new File(outputFileName));
+		System.out.println("done");
 		
+	}
+	
+	private static Fragrance fragrancePart() {
+		Fragrance fragrance = new Fragrance(2, new Point(500, 350), 200);
+		fragrance.addPoint(new Point(500, 650));
+		return fragrance;
 	}
 	
 	private static Fragrance fragranceWithCorner() {
