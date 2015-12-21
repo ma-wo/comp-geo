@@ -11,7 +11,7 @@ public class City implements Iterable<Polygon> {
 	
 	public City(List<Polygon> polygons) {
 		this.polygons = polygons;
-		this.bvh = bvh; // TODO build BVH
+		this.bvh = new BoundingVolumeHierarchy(polygons);
 	}
 	
 	public boolean intersectBuilding(Point a, Point b) {
