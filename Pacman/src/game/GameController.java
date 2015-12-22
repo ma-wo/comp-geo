@@ -8,6 +8,7 @@ import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.stream.Collectors;
@@ -39,6 +40,10 @@ public class GameController extends JPanel {
 	private static final int PACMAN_SPEED = 5;
 	
 	private static final int PACMAN_DIAGONAL_SPEED = (int)(PACMAN_SPEED / Math.sqrt(2));
+	
+	private static final int GHOST_SPEED = (int)(2.0/3.0 * PACMAN_SPEED);
+	
+	private static final int GHOST_DIAGONAL_SPEED = (int)(GHOST_SPEED / Math.sqrt(2));
 		
 	private GameState state;
 	
@@ -52,10 +57,16 @@ public class GameController extends JPanel {
 	
 	private int dy;
 	
+	private int width;
+	
+	private int height;
+	
 	private DistanceFunction distFunc = new ExactDistanceFunction();
 		
 	public GameController(City city, int width, int height, int ghostCount) {
 		this.city = city;
+		this.width = width;
+		this.height = height;
 		this.state = new GameState(city, distFunc, ghostCount, width, height);
 	}
 
@@ -70,19 +81,75 @@ public class GameController extends JPanel {
 	}
 	
 	public void update() {
-		// TODO: calculate new positions (currently the ghosts are static)
-		List<Point> positions = state.getGhosts().stream().map(Ghost::getPosition).collect(Collectors.toList());
+		List<Ghost> ghosts = state.getGhosts();
+		List<Point> positions = ghosts.stream().map(Ghost::getPosition).collect(Collectors.toList());;		
+		Random rand = new Random();
+		for (int i = 0; i < ghosts.size(); ++i) {
+			Ghost ghost = ghosts.get(i);
+			Point currP = ghost.getPosition();
+			Point p = new Point(currP.x + ghost.getDX(), currP.y + ghost.getDY());
+			
+			while (city.isInsideBuilding(p) || p.x < 0 || p.x > width || p.y < 0 || p.y > height) {
+				setNewMove(ghost, rand);
+				p = new Point(currP.x + ghost.getDX(), currP.y + ghost.getDY());
+			}
+			positions.set(i, p);
+		}
 		Point oldPosition = state.getPacman().getPosition();
 		Point pacmanPosition = new Point(oldPosition.x + dx, oldPosition.y + dy);
+		if (city.isInsideBuilding(pacmanPosition)) {
+			pacmanPosition = oldPosition;
+		}
 		
 		ghostsSmellingPacman = state.update(positions, pacmanPosition);
 		repaint();
+	}
+	
+	private void setNewMove(Ghost ghost, Random rand) {
+		int choice = rand.nextInt(8);		
+		switch (choice) {
+			case 0: // E
+				ghost.setMove(GHOST_SPEED, 0);
+				break;
+			case 1: // NE
+				ghost.setMove(GHOST_DIAGONAL_SPEED, -GHOST_DIAGONAL_SPEED);
+				break;
+			case 2: // N
+				ghost.setMove(0, -GHOST_SPEED);
+				break;
+			case 3: // NW
+				ghost.setMove(-GHOST_DIAGONAL_SPEED, -GHOST_DIAGONAL_SPEED);
+				break;
+			case 4: // W
+				ghost.setMove(-GHOST_SPEED, 0);
+				break;
+			case 5: // SW
+				ghost.setMove(-GHOST_DIAGONAL_SPEED, GHOST_DIAGONAL_SPEED);
+				break;
+			case 6: // S
+				ghost.setMove(0, GHOST_SPEED);
+				break;
+			case 7: // SE
+				ghost.setMove(GHOST_DIAGONAL_SPEED, GHOST_DIAGONAL_SPEED);
+				break;			
+		}
 	}
 	
 	public void paintComponent(Graphics g){
 		((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, getWidth(), getHeight());
+		
+		// TODO: exclude buildings? Michael: I would say yes, otherwise it is difficult to navigate through narrow streets 
+		g.setColor(new Color(128, 255, 255, 255));
+		Fragrance f = state.getPacman().getFragrance();
+		for (int i = 0; i < f.getNumberOfPoints(); i++) {
+			int rad = (int) f.getSmellRadiusAtPoint(i);
+			Point p = f.getPoint(i);
+			g.fillOval(p.x - rad, p.y - rad, 2 * rad, 2 * rad);
+		}
+		
+		
 		g.setColor(Color.LIGHT_GRAY);		
 		for (Polygon polygon : city) {
 			java.awt.Polygon p = new java.awt.Polygon();
@@ -90,15 +157,6 @@ public class GameController extends JPanel {
 				p.addPoint(polygon.getPoint(i).x, polygon.getPoint(i).y);					
 			}
 			g.fillPolygon(p);
-		}
-		
-		// TODO: exclude buildings? 
-		g.setColor(new Color(128, 255, 255, 255));
-		Fragrance f = state.getPacman().getFragrance();
-		for (int i = 0; i < f.getNumberOfPoints(); i++) {
-			int rad = (int) f.getSmellRadiusAtPoint(i);
-			Point p = f.getPoint(i);
-			g.fillOval(p.x - rad, p.y - rad, 2 * rad, 2 * rad);
 		}
 		
 		

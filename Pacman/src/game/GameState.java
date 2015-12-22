@@ -35,11 +35,19 @@ public class GameState {
 		this.distFunc = distFunc;
 		Random rand = new Random();
 		ghosts = new ArrayList<>(ghostCount);
-		for (int i = 0; i < ghostCount; i++) {
-			// TODO: make sure that ghosts are not placed inside buildings
-			ghosts.add(new Ghost(new Point(rand.nextInt(width), rand.nextInt(height))));
+		for (int i = 0; i < ghostCount; i++) {		
+			Point p = new Point(rand.nextInt(width), rand.nextInt(height));
+			while (city.isInsideBuilding(p)) {
+				p = new Point(rand.nextInt(width), rand.nextInt(height));
+			}
+			ghosts.add(new Ghost(p, rand.nextInt(5), rand.nextInt(5)));
 		}
-		pacman = new Pacman(new Point(), FRAGRANCE_POINTS, SMELL_RADIUS);
+		Point pacmanPos = new Point(rand.nextInt(width), rand.nextInt(height));
+		while (city.isInsideBuilding(pacmanPos)) {
+			pacmanPos = new Point(rand.nextInt(width), rand.nextInt(height));
+		}
+		
+		pacman = new Pacman(pacmanPos, FRAGRANCE_POINTS, SMELL_RADIUS);
 		grid = new Grid(width, height, CELL_LENGTH, ghosts);
 	}
 	
