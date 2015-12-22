@@ -34,5 +34,21 @@ public class ExactDistanceFunction implements DistanceFunction {
 			return projection.distance(ghost.getPosition()) <= smellRadiusAtProjection;
 		}
 	}
+	
+	@Override
+	public Point getPointOnSegment(Fragrance fragrance, int index, Ghost ghost) {
+		// TODO: This returns the closest point on the line segment which might not be appropriate here.
+		if (index < 0 || index > fragrance.getNumberOfPoints() - 2) {
+			throw new IndexOutOfBoundsException();
+		}
+		Point first = fragrance.getPoint(index);
+		Point second = fragrance.getPoint(index + 1);
+		
+		if (first.equals(second)) {
+			return first;
+		}
+		double t = GeometryUtil.projectToSegment(first, second, ghost.getPosition());
+		return GeometryUtil.getPointOnLine(first, second, t);
+	}
 
 }

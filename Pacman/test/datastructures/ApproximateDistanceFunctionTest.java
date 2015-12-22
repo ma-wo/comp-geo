@@ -57,16 +57,16 @@ public class ApproximateDistanceFunctionTest {
 			{8, 2, 3, true},
 			
 			// near Pacman
-			{8, 5, 3, false},
-			{8, 4, 3, true},
-			{8, 3, 3, true},
-			{9, 2, 3, true},
-			{10, 2, 3, true},
-			{11, 2, 3, false},
-			{6, 4, 3, false},
-			{7, 3, 3, true},
-			{9, 1, 3, true},
-			{10, 0, 3, false},
+			{8, 5, 4, false},
+			{8, 4, 4, true},
+			{8, 3, 4, true},
+			{9, 2, 4, true},
+			{10, 2, 4, true},
+			{11, 2, 4, false},
+			{6, 4, 4, false},
+			{7, 3, 4, true},
+			{9, 1, 4, true},
+			{10, 0, 4, false},
 			
 			// segment 0
 			{-1.2, 7, 0, false},
@@ -98,10 +98,11 @@ public class ApproximateDistanceFunctionTest {
 	public void setUp() {
 		// all points are multiplied with 100 to get work around integer limitations
 		ghost = new Ghost(new Point((int)(ghostX * 100), (int)(ghostY * 100)));
-		fragrance = new Fragrance(5, new Point(-100, 800), 200);
+		fragrance = new Fragrance(6, new Point(-100, 800), 250);
 		fragrance.addPoint(new Point(-100, 500));
 		fragrance.addPoint(new Point(300, 100));
 		fragrance.addPoint(new Point(500, -100));
+		fragrance.addPoint(new Point(800, 200));
 		fragrance.addPoint(new Point(800, 200));
 	}
 	

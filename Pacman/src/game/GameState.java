@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -16,15 +17,27 @@ import datastructures.Pacman;
 
 public class GameState {
 	
+	private static final int FRAGRANCE_POINTS = 30;
+	
+	private static final int SMELL_RADIUS = 50;
+	
+	private static final int CELL_LENGTH = SMELL_RADIUS;
+	
 	private City city;
 	private List<Ghost> ghosts;
 	private Pacman pacman;
 	private Grid grid;
 	private DistanceFunction distFunc;
 	
-	public GameState(City city, DistanceFunction distFunc) {
+	public GameState(City city, DistanceFunction distFunc, int ghostCount, int width, int height) {
 		this.city = city;
 		this.distFunc = distFunc;
+		ghosts = new ArrayList<>(ghostCount);
+		for (int i = 0; i < ghostCount; i++) {
+			ghosts.add(new Ghost(new Point()));
+		}
+		pacman = new Pacman(new Point(), FRAGRANCE_POINTS, SMELL_RADIUS);
+		grid = new Grid(width, height, CELL_LENGTH, ghosts);
 	}
 	
 	/**
@@ -46,9 +59,10 @@ public class GameState {
 		for (int i = 0; i < fragrance.getNumberOfPoints()-1; ++i) {
 			for (Ghost ghost : grid.getGhosts(fragrance.getPoint(i), fragrance.getPoint(i+1))) {
 				if (!ghostsSmellingPacman.contains(ghost) && distFunc.isCloseEnough(fragrance, i, ghost)) {
-					// TODO: check if there are buildings between the ghost and the fragrance with the bvh
-					// TODO: change method signature of distFunc to get closest point on trajectory
-					ghostsSmellingPacman.add(ghost);
+					Point pointOnSegment = distFunc.getPointOnSegment(fragrance, i, ghost);
+					if (!city.intersectBuilding(ghost.getPosition(), pointOnSegment)) {
+						ghostsSmellingPacman.add(ghost);
+					}
 				}
 			}			
 		}
@@ -56,6 +70,13 @@ public class GameState {
 		return new LinkedList<Ghost>(ghostsSmellingPacman);
 	}
 
+	public Pacman getPacman() {
+		return pacman;
+	}
+	
+	public List<Ghost> getGhosts() {
+		return Collections.unmodifiableList(ghosts);
+	}
 	
 
 }
