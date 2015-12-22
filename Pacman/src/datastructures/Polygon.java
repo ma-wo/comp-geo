@@ -50,6 +50,18 @@ public class Polygon {
 		return boundingBox;
 	}
 	
+	public boolean contains(Point p) {
+		int numIntersections = 0;
+		Point rightBorder = new Point(boundingBox.getBottomRight().x + 50, p.y);
+		for (int i = 0; i < points.size(); ++i) {
+			if (linesIntersect(i, (i+1) % points.size(), p, rightBorder)) {
+				numIntersections++;
+			}
+		}
+		
+		return numIntersections % 2 == 1;
+	}
+	
 	public boolean intersects(Point a, Point b) {
 		assert(!a.equals(b)); // a != b, otherwise we do not have a line
 		

@@ -26,6 +26,10 @@ public class BoundingVolumeHierarchy {
 		build(root, polygons);
 	}
 	
+	public boolean insidePolygon(Point p) {
+		return insidePolygon(root, p);
+	}
+	
 	public boolean intersects(Point a, Point b) {		
 		return intersects(root, a, b);
 	}
@@ -45,6 +49,16 @@ public class BoundingVolumeHierarchy {
 		result += ")";
 		
 		return result;
+	}
+	
+	private boolean insidePolygon(Node node, Point p) {
+		if (node == null) return false;
+		if (node.isChild()) return node.p.contains(p);
+		if (node.boundingBox.contains(p)) {
+			return insidePolygon(node.leftChild, p) || insidePolygon(node.rightChild, p);		
+		}
+		
+		return false;
 	}
 	
 	private boolean intersects(Node node, Point a, Point b) {

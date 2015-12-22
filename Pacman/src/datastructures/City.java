@@ -17,6 +17,10 @@ public class City implements Iterable<Polygon> {
 	public boolean intersectBuilding(Point a, Point b) {
 		return bvh.intersects(a, b);
 	}
+	
+	public boolean isInsideBuilding(Point p) {
+		return bvh.insidePolygon(p);
+	}
 
 	@Override
 	public Iterator<Polygon> iterator() {

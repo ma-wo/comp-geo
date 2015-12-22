@@ -22,6 +22,14 @@ public class BoundingBox {
 		return centroid;
 	}
 	
+	public Point getTopLeft() {
+		return topLeft;
+	}
+	
+	public Point getBottomRight() {
+		return bottomRight;
+	}
+	
 	public float getSurfaceArea() {
 		return (bottomRight.x - topLeft.x) * (bottomRight.y - topLeft.y);
 	}
@@ -32,6 +40,10 @@ public class BoundingBox {
 		
 		bottomRight.x = Math.max(bottomRight.x, other.bottomRight.x);
 		bottomRight.y = Math.max(bottomRight.y, other.bottomRight.y);	
+	}
+	
+	public boolean contains(Point p) {
+		return topLeft.x <= p.x && p.x <= bottomRight.x && topLeft.y <= p.y && p.y <= bottomRight.y;
 	}
 	
 	public boolean intersects(Point a, Point b) {
