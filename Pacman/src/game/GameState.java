@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import datastructures.City;
@@ -32,9 +33,11 @@ public class GameState {
 	public GameState(City city, DistanceFunction distFunc, int ghostCount, int width, int height) {
 		this.city = city;
 		this.distFunc = distFunc;
+		Random rand = new Random();
 		ghosts = new ArrayList<>(ghostCount);
 		for (int i = 0; i < ghostCount; i++) {
-			ghosts.add(new Ghost(new Point()));
+			// TODO: make sure that ghosts are not placed inside buildings
+			ghosts.add(new Ghost(new Point(rand.nextInt(width), rand.nextInt(height))));
 		}
 		pacman = new Pacman(new Point(), FRAGRANCE_POINTS, SMELL_RADIUS);
 		grid = new Grid(width, height, CELL_LENGTH, ghosts);

@@ -6,15 +6,19 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
+import java.util.Collections;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.stream.Collectors;
 
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import datastructures.City;
+import datastructures.DistanceFunction;
 import datastructures.ExactDistanceFunction;
+import datastructures.Fragrance;
 import datastructures.Ghost;
 import datastructures.Polygon;
 import gui.MainWindow;
@@ -40,7 +44,7 @@ public class GameController extends JPanel {
 	
 	private City city;
 	
-	private List<Ghost> ghostsSmellingPacman;
+	private List<Ghost> ghostsSmellingPacman = Collections.emptyList();
 	
 	private Timer timer = new Timer(true);
 	
@@ -48,13 +52,11 @@ public class GameController extends JPanel {
 	
 	private int dy;
 	
-	
-	
-	
+	private DistanceFunction distFunc = new ExactDistanceFunction();
+		
 	public GameController(City city, int width, int height, int ghostCount) {
 		this.city = city;
-		this.state = new GameState(city, new ExactDistanceFunction(), ghostCount, width, height);
-		
+		this.state = new GameState(city, distFunc, ghostCount, width, height);
 	}
 
 	public void start() {
@@ -62,7 +64,7 @@ public class GameController extends JPanel {
 			
 			@Override
 			public void run() {
-				update();
+				SwingUtilities.invokeLater(GameController.this::update);
 			}
 		}, 0, 40);
 	}
@@ -88,6 +90,22 @@ public class GameController extends JPanel {
 				p.addPoint(polygon.getPoint(i).x, polygon.getPoint(i).y);					
 			}
 			g.fillPolygon(p);
+		}
+		
+		// TODO: exclude buildings? 
+		g.setColor(new Color(128, 255, 255, 255));
+		Fragrance f = state.getPacman().getFragrance();
+		for (int i = 0; i < f.getNumberOfPoints(); i++) {
+			int rad = (int) f.getSmellRadiusAtPoint(i);
+			Point p = f.getPoint(i);
+			g.fillOval(p.x - rad, p.y - rad, 2 * rad, 2 * rad);
+		}
+		
+		
+		g.setColor(Color.BLUE);
+		for (Ghost ghost : state.getGhosts()) {
+			Point ghostPos = ghost.getPosition();
+			g.fillOval(ghostPos.x - GHOST_RADIUS, ghostPos.y - GHOST_RADIUS, 2 * GHOST_RADIUS, 2 * GHOST_RADIUS);
 		}
 		
 		g.setColor(Color.RED);
