@@ -29,7 +29,7 @@ public class GameController extends JPanel {
 	
 	private static final long serialVersionUID = 859694576603588204L;
 
-	private static final int DEFAULT_GHOST_COUNT = 20;
+	private static final int DEFAULT_GHOST_COUNT = 100;
 
 	private static final int GHOST_RADIUS = 5;
 	
@@ -97,6 +97,11 @@ public class GameController extends JPanel {
 		}
 		Point oldPosition = state.getPacman().getPosition();
 		Point pacmanPosition = new Point(oldPosition.x + dx, oldPosition.y + dy);
+		if (pacmanPosition.x < 0) pacmanPosition.x = 0;
+		if (pacmanPosition.x > width) pacmanPosition.x = width;
+		if (pacmanPosition.y < 0) pacmanPosition.y = 0;
+		if (pacmanPosition.y > height) pacmanPosition.y = height;
+		
 		if (city.isInsideBuilding(pacmanPosition)) {
 			pacmanPosition = oldPosition;
 		}
