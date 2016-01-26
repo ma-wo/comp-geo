@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70107" creator="Ipe 7.1.9">
-<info created="D:20090429144355" modified="D:20160126172853" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
+<ipe version="70107" creator="Ipe 7.1.10">
+<info created="D:20090429144355" modified="D:20160126195923" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
 <preamble>\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 %\usepackage{german}
@@ -205,7 +205,6 @@ h
 <color name="green" value="0 1 0"/>
 <color name="blue" value="0 0 1"/>
 <color name="yellow" value="1 1 0"/>
-<color name="darkgreen" value="0 0.392 0"/>
 <color name="orange" value="1 0.647 0"/>
 <color name="gold" value="1 0.843 0"/>
 <color name="purple" value="0.627 0.125 0.941"/>
@@ -219,6 +218,7 @@ h
 <color name="darkblue" value="0 0 0.545"/>
 <color name="darkcyan" value="0 0.545 0.545"/>
 <color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
 <color name="darkmagenta" value="0.545 0 0.545"/>
 <color name="darkorange" value="1 0.549 0"/>
 <color name="darkred" value="0.545 0 0"/>
@@ -232,13 +232,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
-<textsize name="small" value="\small"/>
-<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
+<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
+<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -3559,13 +3559,13 @@ h
 <textsize name="largebf" value="\bf\large"/>
 <textstretch name="normal" value="2.45"/>
 <textstretch name="large" value="2.45"/>
-<textstretch name="small" value="2.2"/>
-<textstretch name="tiny" value="2.8"/>
 <textstretch name="Large" value="2.2"/>
 <textstretch name="LARGE" value="2.2"/>
 <textstretch name="huge" value="2.2"/>
 <textstretch name="Huge" value="2.2"/>
+<textstretch name="small" value="2.2"/>
 <textstretch name="footnote" value="2"/>
+<textstretch name="tiny" value="2.8"/>
 <textstretch name="verytiny" value="2.3"/>
 <textstretch name="largebf" value="2.45"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
@@ -3696,10 +3696,10 @@ h
 </symbol>
 </ipestyle>
 <ipestyle name="transparency">
-<opacity name="50%" value="0.5"/>
 <opacity name="10%" value="0.1"/>
-<opacity name="20%" value="0.2"/>
 <opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="20%" value="0.2"/>
 <opacity name="40%" value="0.4"/>
 <opacity name="60%" value="0.6"/>
 <opacity name="70%" value="0.7"/>
@@ -3752,12 +3752,12 @@ h
 <layer name="alpha"/>
 <layer name="pagenumbers_page" edit="no"/>
 <view layers="alpha pagenumbers_page" active="alpha"/>
-<text layer="alpha" transformations="translations" pos="0 440" stroke="black" type="minipage" width="736" height="87.6022" depth="75.5825" valign="top">\textbf{Given:} \begin{itemize}
-\item city modeled by polygons
-\item time steps
+<text layer="alpha" transformations="translations" pos="0 440" stroke="black" type="minipage" width="736" height="85.4707" depth="73.402" valign="top">\textbf{Given:} \begin{itemize}
+\item City modeled by polygons
+\item Time steps
 \begin{itemize}
-\item positions of ghosts
-\item position of Pacman
+\item Positions of ghosts
+\item Position of Pacman
 \end{itemize}
 \end{itemize}</text>
 <text transformations="translations" pos="0 256" stroke="black" type="minipage" width="736" height="16.932" depth="4.704" valign="top">\textbf{Output:} For all time steps: All ghosts that smell Pacman</text>
@@ -4457,7 +4457,7 @@ h
 368 216 m
 408 216 l
 </path>
-<text matrix="1 0 0 1 8 0" transformations="translations" pos="416 216" stroke="KITblack" type="label" width="108.594" height="16.2264" depth="0.3675" valign="center">candidates</text>
+<text matrix="1 0 0 1 8 0" transformations="translations" pos="416 216" stroke="KITblack" type="label" width="113.58" height="16.5522" depth="0.3675" valign="center">Candidates</text>
 <path layer="candidate_ghosts" matrix="0.339935 0 0 0.339935 136.026 101.003" fill="KITblack30">
 368 688
 368 704
@@ -5958,7 +5958,7 @@ h
 <layer name="alpha"/>
 <layer name="pagenumbers_page" edit="no"/>
 <view layers="alpha pagenumbers_page" active="alpha"/>
-<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="95.5084" depth="83.4715" valign="top">\begin{itemize}
+<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="95.5083" depth="83.4715" valign="top">\begin{itemize}
 \item $g$: number of ghosts
 \item $c$: number of candidates
 \item $k$: number of trajectory line segments
