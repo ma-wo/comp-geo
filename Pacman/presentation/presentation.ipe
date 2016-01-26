@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.9">
-<info created="D:20090429144355" modified="D:20160126143228" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
+<info created="D:20090429144355" modified="D:20160126172853" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
 <preamble>\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 %\usepackage{german}
@@ -3717,7 +3717,7 @@ h
 <view layers="title BACKGROUND background alpha" active="title"/>
 <text layer="title" matrix="1 0 0 1 -213 -46" pos="213 427" stroke="black" type="label" width="354.416" height="21.5248" depth="0.528" valign="baseline" size="Large">\bf Ghosts Activate On Smell</text>
 <text matrix="1 0 0 1 -213 -123" pos="213 427" stroke="black" type="label" width="353.111" height="13.2528" depth="3.806" valign="bottom" size="small">\bf Project Presentation $\,\cdot\,$ February 1st 2016</text>
-<text matrix="1 0 0 1 -213 -141" pos="213 427" stroke="black" type="label" width="116.871" height="13.244" depth="0.176" valign="baseline" size="small">\bf \name</text>
+<text matrix="1 0 0 1 -213 -141" pos="213 427" stroke="black" type="label" width="263.215" height="13.2396" depth="3.938" valign="baseline" size="small">\bf \name</text>
 <text layer="pagenumbers_format" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="31.6204" height="7.5578" depth="2.277" halign="center" valign="top" size="verytiny">{\bf [page]}</text>
 <group layer="BACKGROUND" matrix="1 0 0 1 2 0">
 <path fill="KITblack50">
@@ -3748,10 +3748,2226 @@ h
 </group>
 <text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 0}</text>
 </page>
-<page>
+<page title="Problem">
 <layer name="alpha"/>
 <layer name="pagenumbers_page" edit="no"/>
 <view layers="alpha pagenumbers_page" active="alpha"/>
+<text layer="alpha" transformations="translations" pos="0 440" stroke="black" type="minipage" width="736" height="87.6022" depth="75.5825" valign="top">\textbf{Given:} \begin{itemize}
+\item city modeled by polygons
+\item time steps
+\begin{itemize}
+\item positions of ghosts
+\item position of Pacman
+\end{itemize}
+\end{itemize}</text>
+<text transformations="translations" pos="0 256" stroke="black" type="minipage" width="736" height="16.932" depth="4.704" valign="top">\textbf{Output:} For all time steps: All ghosts that smell Pacman</text>
 <text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5463" depth="0" halign="center" valign="top" size="verytiny">{\bf 1}</text>
+</page>
+<page title="Model">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<layer name="delta"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<view layers="pagenumbers_page delta" active="delta"/>
+<view layers="pagenumbers_page beta delta" active="beta"/>
+<view layers="pagenumbers_page beta gamma delta" active="gamma"/>
+<path layer="beta" matrix="1.68354 0 0 1.68354 -182.481 -852.724" stroke="KITcyanblue" fill="KITcyanblue50">
+240 608 m
+32.0006 0 0 -32.0006 240 640.001 219.549 615.388 a
+192.775 658.229 l
+165.959 701.106 l
+213.144 682.909 l
+240.761 672.254 l
+288 688 l
+336 704 l
+384 720 l
+80 0 0 -80 384 640 384 560 a
+336 576 l
+288 592 l
+240 608 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -182.481 -853.469" stroke="black">
+384 640 m
+336 640 l
+288 640 l
+240 640 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -182.481 -853.469" stroke="black">
+240 640 m
+202.979 670.553 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -182.481 -853.469" stroke="black">
+165.959 701.106 m
+202.979 670.553 l
+</path>
+<group layer="alpha" matrix="1 0 0 1 240 -96">
+<group matrix="1 0 0 1 96 -416">
+<path fill="gold">
+160 752 m
+35.7771 0 0 35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+160 720 m
+35.7771 0 0 -35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 752 l
+92.2229 736 l
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 720 l
+</path>
+<path fill="gold">
+160 752 m
+128 736 l
+128 752 l
+</path>
+<path fill="gold">
+160 720 m
+128 736 l
+128 720 l
+</path>
+</group>
+<use name="mark/disk(sx)" pos="232 336" size="small" stroke="black"/>
+</group>
+<group matrix="2.55459 0 0 2.55459 -263.111 -474.674">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black" pen="heavier">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group matrix="1 0 0 1 92.691 -40.1803">
+<path matrix="0.868395 0 0 0.868395 -136.539 -467.429" stroke="black" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.868395 0 0 0.868395 -164.328 -443.115" stroke="black" pen="heavier">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<use layer="beta" matrix="1 0 0 1 2.95922 -1.31642" name="mark/disk(sx)" pos="218.61 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 2.95922 -1.31642" name="mark/disk(sx)" pos="156.284 276.754" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 2.95922 -1.31642" name="mark/disk(sx)" pos="93.959 328.191" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 2.95922 -1.31642" name="mark/disk(sx)" pos="299.42 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 2.95922 -1.31642" name="mark/disk(sx)" pos="380.231 225.316" size="small" stroke="KITblack"/>
+<text layer="gamma" matrix="1 0 0 1 0 -40" transformations="translations" pos="109.844 403.3" stroke="KITblack" type="label" width="158.243" height="16.2215" depth="4.998" valign="baseline">$k$ line segments</text>
+<path stroke="KITred">
+464 359.428 m
+464 224 l
+</path>
+<text transformations="translations" pos="454.501 371.239" stroke="KITred" type="label" width="43.1421" height="16.8756" depth="3.92" valign="baseline">$\delta_\text{max}$</text>
+<use layer="delta" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITyellow"/>
+<use name="mark/fdisk(sfx)" pos="289.615 89.8456" size="large" stroke="KITblack" fill="KITred"/>
+<use name="mark/fdisk(sfx)" pos="340.97 287.823" size="large" stroke="KITblack" fill="KITorange"/>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5463" depth="0" halign="center" valign="top" size="verytiny">{\bf 2}</text>
+</page>
+<page title="Control Flow">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<view layers="alpha pagenumbers_page beta" active="beta"/>
+<path layer="alpha" stroke="KITblack" pen="fat" arrow="normal/normal">
+72 216 m
+104 216 l
+</path>
+<path stroke="KITblack" pen="fat" arrow="normal/normal">
+576 232 m
+576 288 l
+384 288 l
+384 236 l
+</path>
+<path stroke="KITblack" pen="fat" arrow="normal/normal">
+432 216 m
+542 216 l
+</path>
+<path stroke="KITblack" pen="fat" arrow="normal/normal">
+232 216 m
+344 216 l
+</path>
+<group matrix="1 0 0 1 16 -32">
+<group>
+<path stroke="black" fill="KITblue15">
+88 264.297 m
+213.306 264.297 l
+8 0 0 -8 213.306 256.297 221.306 256.297 a
+221.306 231.703 l
+96 231.703 l
+8 0 0 -8 96 239.703 88 239.703 a
+h
+</path>
+</group>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="96 256" stroke="KITblack" type="label" width="117.306" height="16.2264" depth="0.3675" valign="center">Initialization</text>
+</group>
+<group matrix="1 0 0 1 50.4543 -40">
+<group>
+<path stroke="black" fill="KITblue15">
+296 274.453 m
+376.398 274.453 l
+8 0 0 -8 376.398 266.453 384.398 266.453 a
+384.398 237.547 l
+304 237.547 l
+8 0 0 -8 304 245.547 296 245.547 a
+h
+</path>
+</group>
+<text transformations="translations" pos="304 256" stroke="KITblack" type="label" width="72.3975" height="16.2264" depth="4.6795" valign="center">Update</text>
+</group>
+<group matrix="1 0 0 1 16 -32">
+<group>
+<path stroke="black" fill="KITblue15">
+528 266.677 m
+597.821 266.677 l
+8 0 0 -8 597.821 258.677 605.821 258.677 a
+605.821 229.323 l
+536 229.323 l
+8 0 0 -8 536 237.323 528 237.323 a
+h
+</path>
+</group>
+<text transformations="translations" pos="536 248" stroke="KITblack" type="label" width="61.8209" height="16.5522" depth="4.802" valign="center">Query</text>
+</group>
+<group layer="beta" matrix="1 0 0 1 16 -32">
+<group>
+<path stroke="black" fill="KITred50">
+528 266.677 m
+597.821 266.677 l
+8 0 0 -8 597.821 258.677 605.821 258.677 a
+605.821 229.323 l
+536 229.323 l
+8 0 0 -8 536 237.323 528 237.323 a
+h
+</path>
+</group>
+<text transformations="translations" pos="536 248" stroke="KITblack" type="label" width="61.8209" height="16.5522" depth="4.802" valign="center">Query</text>
+</group>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 3}</text>
+</page>
+<page title="Grid">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<layer name="colored_ghosts"/>
+<layer name="candidate_ghosts"/>
+<layer name="gamma"/>
+<layer name="smelling_ghosts"/>
+<view layers="alpha pagenumbers_page colored_ghosts" active="alpha"/>
+<view layers="alpha pagenumbers_page beta candidate_ghosts" active="candidate_ghosts"/>
+<view layers="alpha pagenumbers_page beta gamma smelling_ghosts" active="smelling_ghosts"/>
+<path layer="colored_ghosts" matrix="0.339935 0 0 0.339935 136.026 101.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path layer="beta" matrix="1 0 0 1 -32 -352" fill="KITpalegreen70">
+128 672 m
+128 576 l
+320 576 l
+320 672 l
+h
+</path>
+<path layer="alpha" matrix="1 0 0 1 -32 -352" fill="KITcyanblue70">
+272 640 m
+148 624 l
+272 608 l
+16 0 0 16 272 624 272 640 a
+h
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 768 m
+64 512 l
+320 512 l
+320 768 l
+h
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+192 768 m
+192 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+256 768 m
+256 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+320 576 m
+64 576 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 640 m
+320 640 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+320 704 m
+64 704 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+128 768 m
+128 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+96 768 m
+96 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+160 768 m
+160 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+224 768 m
+224 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+288 768 m
+288 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+320 736 m
+64 736 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 672 m
+320 672 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+320 608 m
+64 608 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 544 m
+320 544 l
+</path>
+<group matrix="0.272894 0 0 0.272894 205.07 71.15">
+<path fill="gold">
+160 752 m
+35.7771 0 0 35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+160 720 m
+35.7771 0 0 -35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 752 l
+92.2229 736 l
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 720 l
+</path>
+<path fill="gold">
+160 752 m
+128 736 l
+128 752 l
+</path>
+<path fill="gold">
+160 720 m
+128 736 l
+128 720 l
+</path>
+</group>
+<path layer="colored_ghosts" matrix="0.339935 0 0 0.339935 125.148 110.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 9.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 18.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 77.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 86.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -78.535 162.125" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -89.413 171.643" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 68.026 29.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 57.148 38.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 161.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 170.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -47.974 -14.997" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -58.852 -5.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 112.026 -46.997" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 101.148 -37.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -75.974 105.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -86.852 114.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 40.026 125.003" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 29.148 134.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 120.026 169.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 109.148 178.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 52.026 169.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 41.148 178.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 108.026 137.003" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 97.148 146.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -83.974 1.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -94.852 10.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 -50.997" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 -41.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<text layer="alpha" transformations="translations" pos="352 416" stroke="KITblack" type="minipage" width="384" height="19.1272" depth="6.909" valign="top" style="item">Overlay the city with a grid</text>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="352 384" stroke="KITblack" type="minipage" width="384" height="19.1272" depth="6.909" valign="top" style="item">Cells store the ghosts they contain</text>
+<text matrix="1 0 0 1 -16 -16" transformations="translations" pos="192 128" stroke="KITblack" type="label" width="73.255" height="16.8756" depth="3.92" valign="baseline">$2\cdot\delta_\text{max}$</text>
+<group>
+<path stroke="KITblack">
+192 144 m
+224 144 l
+</path>
+<path stroke="KITblack">
+224 152 m
+224 136 l
+224 136 l
+</path>
+<path stroke="KITblack">
+192 152 m
+192 136 l
+</path>
+</group>
+<text layer="beta" transformations="translations" pos="352 320" stroke="KITblack" type="minipage" width="384" height="48.4218" depth="36.2845" valign="top">\textbf{Query:}
+\begin{itemize}
+\item For each line segment: check \\8-neighborhood
+\end{itemize}</text>
+<path stroke="KITblack" pen="fat" arrow="normal/normal">
+368 216 m
+408 216 l
+</path>
+<text matrix="1 0 0 1 8 0" transformations="translations" pos="416 216" stroke="KITblack" type="label" width="108.594" height="16.2264" depth="0.3675" valign="center">candidates</text>
+<path layer="candidate_ghosts" matrix="0.339935 0 0 0.339935 136.026 101.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 125.148 110.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 9.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 18.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 77.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 86.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -78.535 162.125" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -89.413 171.643" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 68.026 29.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 57.148 38.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 161.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 170.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -47.974 -14.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -58.852 -5.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 112.026 -46.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 101.148 -37.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -75.974 105.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -86.852 114.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 40.026 125.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 29.148 134.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 120.026 169.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 109.148 178.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 52.026 169.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 41.148 178.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 108.026 137.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 97.148 146.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -83.974 1.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -94.852 10.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 -50.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 -41.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<text layer="gamma" transformations="translations" pos="352 192" stroke="KITblack" type="minipage" width="384" height="19.1272" depth="6.909" valign="top" style="item">Check if they are in fragrance</text>
+<path layer="smelling_ghosts" matrix="0.339935 0 0 0.339935 136.026 101.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 125.148 110.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 9.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 18.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 77.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 86.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -78.535 162.125" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -89.413 171.643" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 68.026 29.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 57.148 38.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 161.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 170.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -47.974 -14.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -58.852 -5.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 112.026 -46.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 101.148 -37.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -75.974 105.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -86.852 114.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 40.026 125.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 29.148 134.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 120.026 169.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 109.148 178.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 52.026 169.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 41.148 178.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 108.026 137.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 97.148 146.521" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -83.974 1.003" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -94.852 10.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 -50.997" fill="KITblack30">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 -41.479" stroke="KITblack" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5463" depth="0" halign="center" valign="top" size="verytiny">{\bf 4}</text>
+</page>
+<page title="Other Idea">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<path layer="alpha" matrix="0.339935 0 0 0.339935 136.026 101.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="1 0 0 1 -32 -352" fill="KITcyanblue70">
+272 640 m
+148 624 l
+272 608 l
+16 0 0 16 272 624 272 640 a
+h
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 768 m
+64 512 l
+320 512 l
+320 768 l
+h
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+192 768 m
+192 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+256 768 m
+256 512 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+320 576 m
+64 576 l
+</path>
+<path matrix="1 0 0 1 -32 -352" stroke="black">
+64 640 m
+320 640 l
+</path>
+<path stroke="black">
+288 352 m
+32 352 l
+</path>
+<path stroke="black">
+96 416 m
+96 160 l
+</path>
+<path stroke="black">
+128 352 m
+128 224 l
+</path>
+<path stroke="black">
+192 352 m
+192 224 l
+</path>
+<path stroke="black">
+256 352 m
+256 224 l
+</path>
+<path stroke="black">
+96 320 m
+288 320 l
+</path>
+<path stroke="black">
+288 256 m
+96 256 l
+</path>
+<group matrix="0.272894 0 0 0.272894 205.07 71.15">
+<path fill="gold">
+160 752 m
+35.7771 0 0 35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+160 720 m
+35.7771 0 0 -35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 752 l
+92.2229 736 l
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 720 l
+</path>
+<path fill="gold">
+160 752 m
+128 736 l
+128 752 l
+</path>
+<path fill="gold">
+160 720 m
+128 736 l
+128 720 l
+</path>
+</group>
+<path matrix="0.339935 0 0 0.339935 125.148 110.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 9.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 18.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 77.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 86.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -78.535 162.125" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -89.413 171.643" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 68.026 29.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 57.148 38.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 16.026 161.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 5.148 170.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -47.974 -14.997" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -58.852 -5.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 112.026 -46.997" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 101.148 -37.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -75.974 105.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -86.852 114.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 40.026 125.003" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 29.148 134.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 120.026 169.003" fill="KITgreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 109.148 178.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 52.026 169.003" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 41.148 178.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 108.026 137.003" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 97.148 146.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -83.974 1.003" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -94.852 10.521" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<path matrix="0.339935 0 0 0.339935 -19.974 -50.997" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 -30.852 -41.479" stroke="black" pen="1">
+416 660 m
+408 648 l
+416 648 l
+</path>
+<text transformations="translations" pos="352 416" stroke="KITblack" type="minipage" width="384" height="18.9606" depth="6.762" valign="top" style="item">Adaptive Quadtree</text>
+<text matrix="1 0 0 1 0 32" transformations="translations" pos="352 320" stroke="KITblack" type="minipage" width="384" height="33.3494" depth="21.1925" valign="top">\textbf{Pro:}
+\begin{itemize}
+\item More space-efficient
+\end{itemize}</text>
+<text matrix="1 0 0 1 0 -48" transformations="translations" pos="352 320" stroke="KITblack" type="minipage" width="384" height="52.8048" depth="40.6945" valign="top">\textbf{Cons:}
+\begin{itemize}
+\item More complex
+\item Asymptotically not faster
+\end{itemize}</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.3692" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 5}</text>
+</page>
+<page title="Fragrance -- First Approach">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<view layers="alpha pagenumbers_page gamma" active="alpha"/>
+<view layers="alpha pagenumbers_page beta" active="beta"/>
+<path layer="alpha" matrix="1.68354 0 0 1.68354 -206.481 -812.724" stroke="KITcyanblue" fill="KITcyanblue50">
+240 608 m
+32.0006 0 0 -32.0006 240 640.001 219.549 615.388 a
+192.775 658.229 l
+165.959 701.106 l
+213.144 682.909 l
+240.761 672.254 l
+288 688 l
+336 704 l
+384 720 l
+80 0 0 -80 384 640 384 560 a
+336 576 l
+288 592 l
+240 608 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -206.481 -813.469" stroke="black">
+384 640 m
+336 640 l
+288 640 l
+240 640 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -206.481 -813.469" stroke="black">
+240 640 m
+202.979 670.553 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -206.481 -813.469" stroke="black">
+165.959 701.106 m
+202.979 670.553 l
+</path>
+<use matrix="1 0 0 1 -21.0408 38.6836" name="mark/disk(sx)" pos="218.61 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -21.0408 38.6836" name="mark/disk(sx)" pos="156.284 276.754" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -21.0408 38.6836" name="mark/disk(sx)" pos="93.959 328.191" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -21.0408 38.6836" name="mark/disk(sx)" pos="380.231 225.316" size="small" stroke="KITblack"/>
+<path layer="gamma" matrix="1 0 0 1 -24 40" stroke="KITred">
+464 359.428 m
+464 224 l
+</path>
+<text matrix="1 0 0 1 -24 40" transformations="translations" pos="454.501 371.239" stroke="KITred" type="label" width="43.1421" height="16.8756" depth="3.92" valign="baseline">$\delta_\text{max}$</text>
+<use layer="alpha" matrix="1 0 0 1 -24 40" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITyellow"/>
+<path layer="gamma" stroke="KITred" fill="KITorange30">
+278.379 345.552 m
+278.379 264 l
+</path>
+<use layer="alpha" matrix="1 0 0 1 -21.0408 38.6836" name="mark/disk(sx)" pos="299.42 225.316" size="small" stroke="KITblack"/>
+<text matrix="1 0 0 1 -9.79771 10.374" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="22.4444" height="12.1618" depth="4.6795" valign="center">$p_0$</text>
+<text matrix="1 0 0 1 210.939 -97.4006" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="18.5465" height="12.1618" depth="4.6795" valign="center">$p_i$</text>
+<text matrix="1 0 0 1 380.958 -99.1296" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="23.1378" height="12.1618" depth="4.6795" valign="center">$p_k$</text>
+<text layer="gamma" matrix="1 0 0 1 -209.003 -14.1752" transformations="translations" pos="454.501 371.239" stroke="KITred" type="label" width="58.4325" height="20.9818" depth="8.4035" valign="baseline">$\frac{i}{k}\delta_\text{max}$</text>
+<path layer="alpha" stroke="black" dash="dashed">
+197.607 318.628 m
+197.569 210.868 l
+</path>
+<path stroke="black" dash="dashed">
+163.139 223.306 m
+230.836 306.701 l
+</path>
+<path matrix="1.63294 0 0 1.63294 -194.299 -778.709" stroke="black" dash="dashed">
+260.349 664.696 m
+240.761 672.254 l
+</path>
+<path layer="beta" stroke="KITorange" fill="KITred" dash="dense dashed" pen="fat">
+312 336 m
+312 264 l
+</path>
+<path stroke="KITred" fill="KITred">
+316 264 m
+315.833 358.036 l
+</path>
+<use matrix="1 0 0 1 -152 112" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITorange"/>
+<text matrix="1 0 0 1 -20 8" transformations="translations" pos="308 368" stroke="KITred" type="label" width="40.523" height="16.878" depth="4.6795" valign="center">$\delta(x)$</text>
+<text matrix="1 0 0 1 -4 0" transformations="translations" pos="312 256" stroke="KITred" type="label" width="13.3378" height="11.689" depth="0" valign="center">$x$</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 6}</text>
+</page>
+<page title="Fragrance -- Second Approach">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<layer name="delta"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<view layers="alpha pagenumbers_page gamma" active="gamma"/>
+<view layers="alpha pagenumbers_page gamma delta" active="delta"/>
+<path layer="gamma" stroke="KITcyanblue" fill="KITcyanblue50">
+175.361 218.983 m
+409.225 148.013 l
+120 0 0 120 440 264 409.372 380.026 a
+409.372 380.026 l
+192.791 313.977 l
+192.791 313.977 l
+67.349 366.874 l
+151.442 238.337 l
+47.9949 0 0 47.9949 192 264 180.814 217.327 a
+</path>
+<path layer="alpha" matrix="1 0 0 1 1.67367 155.437" stroke="KITcyanblue" fill="KITcyanblue50" opacity="80%">
+24 0 0 24 128 160 e
+</path>
+<path stroke="KITcyanblue" fill="KITcyanblue50" opacity="80%">
+47.997 0 0 47.997 192.001 264.003 e
+</path>
+<path stroke="KITcyanblue" fill="KITcyanblue50" opacity="80%">
+-20.1016 -68.2437 68.2437 -20.1016 272 264 e
+</path>
+<path stroke="KITcyanblue" fill="KITcyanblue50" opacity="80%">
+96.2693 0 0 96.2693 359.19 264 e
+</path>
+<path stroke="KITcyanblue" fill="KITcyanblue50" opacity="80%">
+120 0 0 120 440 264 e
+</path>
+<path matrix="1.68354 0 0 1.68354 -212.05 -813.466" stroke="black">
+240 640 m
+202.979 670.553 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -212.05 -813.466" stroke="black">
+165.959 701.106 m
+202.979 670.553 l
+</path>
+<use matrix="1 0 0 1 -26.6094 38.687" name="mark/disk(sx)" pos="218.61 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -26.6103 38.6832" name="mark/disk(sx)" pos="156.284 276.754" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -26.6094 38.687" name="mark/disk(sx)" pos="93.959 328.191" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -21.039 38.6866" name="mark/disk(sx)" pos="380.231 225.316" size="small" stroke="KITblack"/>
+<path layer="beta" stroke="KITred">
+440 384 m
+440 264 l
+</path>
+<text matrix="1 0 0 1 -9.79771 10.374" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="22.4444" height="12.1618" depth="4.6795" valign="center">$p_0$</text>
+<text matrix="1 0 0 1 210.939 -97.4006" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="18.5465" height="12.1618" depth="4.6795" valign="center">$p_i$</text>
+<text matrix="1 0 0 1 380.958 -99.1296" transformations="translations" pos="56.0318 346.134" stroke="KITblack" type="label" width="23.1378" height="12.1618" depth="4.6795" valign="center">$p_k$</text>
+<text matrix="1 0 0 1 -209.003 -14.1752" transformations="translations" pos="454.501 371.239" stroke="KITred" type="label" width="58.4325" height="20.9818" depth="8.4035" valign="baseline">$\frac{i}{k}\delta_\text{max}$</text>
+<text matrix="1 0 0 1 -32 40" transformations="translations" pos="454.501 371.239" stroke="KITred" type="label" width="43.1421" height="16.8756" depth="3.92" valign="baseline">$\delta_\text{max}$</text>
+<path layer="alpha" stroke="KITblack" fill="KITcyanblue50">
+192 264 m
+440 264 l
+</path>
+<use name="mark/disk(sx)" pos="272 264" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -24 40" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITyellow"/>
+<path layer="beta" stroke="KITred">
+272 336 m
+272 264 l
+</path>
+<text layer="delta" transformations="translations" pos="0 96" stroke="KITblack" type="minipage" width="728" height="18.8576" depth="6.664" valign="top" style="item">Trajectory is stored as linked list</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.3577" depth="0" halign="center" valign="top" size="verytiny">{\bf 7}</text>
+</page>
+<page title="Bounding Volume Hierarchy">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<view layers="alpha pagenumbers_page beta" active="beta"/>
+<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="18.9483" depth="6.762" valign="top" style="item">Until now we ignored the buildings</text>
+<path matrix="1.68354 0 0 1.68354 -190.481 -844.724" stroke="KITcyanblue" fill="KITcyanblue50">
+240 608 m
+32.0006 0 0 -32.0006 240 640.001 219.549 615.388 a
+192.775 658.229 l
+165.959 701.106 l
+213.144 682.909 l
+240.761 672.254 l
+288 688 l
+336 704 l
+384 720 l
+80 0 0 -80 384 640 384 560 a
+336 576 l
+288 592 l
+240 608 l
+</path>
+<path matrix="1 0 0 1 40 40" stroke="KITblack" fill="KITblack30">
+408 352 m
+408 232 l
+208 232 l
+152 296 l
+152 344 l
+192 344 l
+248 280 l
+264 264 l
+376 264 l
+376 352 l
+408 352 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -190.481 -845.469" stroke="black">
+384 640 m
+336 640 l
+288 640 l
+240 640 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -190.481 -845.469" stroke="black">
+240 640 m
+202.979 670.553 l
+</path>
+<path matrix="1.68354 0 0 1.68354 -190.481 -845.469" stroke="black">
+165.959 701.106 m
+202.979 670.553 l
+</path>
+<use matrix="1 0 0 1 -5.04078 6.68358" name="mark/disk(sx)" pos="218.61 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -5.04078 6.68358" name="mark/disk(sx)" pos="156.284 276.754" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -5.04078 6.68358" name="mark/disk(sx)" pos="93.959 328.191" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -5.04078 6.68358" name="mark/disk(sx)" pos="299.42 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -5.04078 6.68358" name="mark/disk(sx)" pos="380.231 225.316" size="small" stroke="KITblack"/>
+<use matrix="1 0 0 1 -8 8" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITyellow"/>
+<path layer="beta" matrix="1 0 0 1 40 40" stroke="KITred" dash="dense dashed" pen="heavier">
+344 288 m
+344 192 l
+</path>
+<use layer="alpha" matrix="1 0 0 1 -80 104" name="mark/fdisk(sfx)" pos="464 224" size="large" stroke="KITblack" fill="KITorange"/>
+<text layer="beta" matrix="1 0 0 1 0 -376" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="19.0561" depth="6.8355" valign="top" style="item">We need a fast way to check for intersections with buildings</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 8}</text>
+</page>
+<page title="Bounding Volume Hierarchy">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<layer name="beta"/>
+<layer name="gamma"/>
+<layer name="delta"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<view layers="alpha pagenumbers_page beta" active="beta"/>
+<view layers="alpha pagenumbers_page beta gamma" active="gamma"/>
+<view layers="alpha pagenumbers_page beta gamma delta" active="delta"/>
+<path layer="alpha" stroke="KITblue" fill="KITblue30">
+16 392 m
+16 200 l
+360 200 l
+360 392 l
+h
+</path>
+<path layer="beta" stroke="KITred" fill="KITred30">
+16 384 m
+16 200 l
+176 200 l
+176 384 l
+h
+</path>
+<path layer="gamma" stroke="KITorange" fill="KITorange30">
+16 384 m
+16 304 l
+88 304 l
+88 384 l
+h
+</path>
+<path layer="alpha" matrix="1 0 0 1 -48 0" stroke="KITblack" fill="KITblack30">
+96 384 m
+64 352 l
+64 320 l
+96 304 l
+136 336 l
+96 384 l
+</path>
+<path layer="beta" stroke="KITred" fill="KITred30">
+224 248 m
+224 392 l
+360 392 l
+360 248 l
+h
+</path>
+<path layer="gamma" stroke="KITorange" fill="KITorange30">
+80 200 m
+80 328 l
+176 328 l
+176 200 l
+h
+</path>
+<path stroke="KITorange" fill="KITorange30">
+248 392 m
+248 336 l
+304 336 l
+304 392 l
+h
+</path>
+<path layer="alpha" matrix="1 0 0 1 32 8" stroke="KITblack" fill="KITblack30">
+248 384 m
+216 344 l
+272 328 l
+248 384 l
+</path>
+<path matrix="1 0 0 1 -48 8" stroke="KITblack" fill="KITblack30">
+128 224 m
+128 192 l
+160 192 l
+160 224 l
+128 224 l
+</path>
+<path matrix="1 0 0 1 -48 8" stroke="KITblack" fill="KITblack30">
+192 288 m
+224 288 l
+224 256 l
+160 256 l
+160 320 l
+192 320 l
+192 288 l
+</path>
+<path layer="gamma" stroke="KITorange" fill="KITorange30">
+360 304 m
+360 248 l
+224 248 l
+224 304 l
+h
+</path>
+<path layer="alpha" matrix="1 0 0 1 -88 8" stroke="KITblack" fill="KITblack30">
+424 296 m
+392 256 l
+432 240 l
+448 272 l
+424 272 l
+424 296 l
+</path>
+<path matrix="1 0 0 1 -72 64" stroke="KITblack" fill="KITblack30">
+296 184 m
+304 232 l
+328 224 l
+336 200 l
+296 184 l
+296 184 l
+</path>
+<path stroke="KITblue" fill="KITblue30">
+544 384 m
+544 352 l
+608 352 l
+608 384 l
+h
+</path>
+<path layer="beta" matrix="1 0 0 1 16 -8" stroke="KITred" fill="KITred30">
+592 328 m
+592 288 l
+624 288 l
+624 328 l
+h
+</path>
+<path matrix="1 0 0 1 -16 0" stroke="KITred" fill="KITred30">
+512 320 m
+512 272 l
+552 272 l
+552 320 l
+h
+</path>
+<path layer="gamma" matrix="1 0 0 1 0 -8" stroke="KITorange" fill="KITorange30">
+456 248 m
+456 208 l
+488 208 l
+488 248 l
+h
+</path>
+<path stroke="KITorange" fill="KITorange30">
+512 240 m
+512 176 l
+552 176 l
+552 240 l
+h
+</path>
+<path matrix="1 0 0 1 0 -16" stroke="KITorange" fill="KITorange30">
+592 256 m
+592 224 l
+624 224 l
+624 256 l
+h
+</path>
+<path stroke="KITorange" fill="KITorange30">
+640 240 m
+640 208 l
+720 208 l
+720 240 l
+h
+</path>
+<path layer="beta" stroke="KITblack" fill="KITorange30">
+544 352 m
+512 320 l
+</path>
+<path stroke="KITblack" fill="KITorange30">
+608 352 m
+624 320 l
+</path>
+<path layer="gamma" stroke="KITblack" fill="KITorange30">
+624 280 m
+608 240 l
+</path>
+<path stroke="KITblack" fill="KITorange30">
+624 280 m
+672 240 l
+</path>
+<path stroke="KITblack" fill="KITorange30">
+512 272 m
+536 240 l
+</path>
+<path stroke="KITblack" fill="KITorange30">
+512 272 m
+472 240 l
+</path>
+<path layer="delta" stroke="KITblack" fill="KITorange30">
+256 384 m
+280 232 l
+</path>
+<use name="mark/disk(sx)" pos="256 384" size="small" stroke="KITblack"/>
+<use name="mark/disk(sx)" pos="280 232" size="small" stroke="KITblack"/>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 9}</text>
+</page>
+<page title="Discussion">
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="95.5084" depth="83.4715" valign="top">\begin{itemize}
+\item $g$: number of ghosts
+\item $c$: number of candidates
+\item $k$: number of trajectory line segments
+\item $b$: number of buildings
+\item $p$: number of points on buildings
+\end{itemize}</text>
+<text matrix="1 0 0 1 0 -24" transformations="translations" pos="0 256" stroke="KITblack" type="minipage" width="736" height="59.045" depth="46.9175" valign="top" style="itemize">\item Initialization: $O(g + b^2\log b +p)$
+\item Query: $O(c\cdot k)$
+\item Update: $O(g)$</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="11.7208" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 10}</text>
 </page>
 </ipe>
