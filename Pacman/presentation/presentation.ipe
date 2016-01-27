@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70107" creator="Ipe 7.1.10">
-<info created="D:20090429144355" modified="D:20160126195923" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
+<ipe version="70107" creator="Ipe 7.1.9">
+<info created="D:20090429144355" modified="D:20160127115743" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
 <preamble>\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 %\usepackage{german}
@@ -232,13 +232,13 @@ h
 <dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
 <dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
 <textsize name="large" value="\large"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
 <textsize name="Large" value="\Large"/>
 <textsize name="LARGE" value="\LARGE"/>
 <textsize name="huge" value="\huge"/>
 <textsize name="Huge" value="\Huge"/>
-<textsize name="small" value="\small"/>
 <textsize name="footnote" value="\footnotesize"/>
-<textsize name="tiny" value="\tiny"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
 <textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
 <textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
@@ -3559,13 +3559,13 @@ h
 <textsize name="largebf" value="\bf\large"/>
 <textstretch name="normal" value="2.45"/>
 <textstretch name="large" value="2.45"/>
+<textstretch name="small" value="2.2"/>
+<textstretch name="tiny" value="2.8"/>
 <textstretch name="Large" value="2.2"/>
 <textstretch name="LARGE" value="2.2"/>
 <textstretch name="huge" value="2.2"/>
 <textstretch name="Huge" value="2.2"/>
-<textstretch name="small" value="2.2"/>
 <textstretch name="footnote" value="2"/>
-<textstretch name="tiny" value="2.8"/>
 <textstretch name="verytiny" value="2.3"/>
 <textstretch name="largebf" value="2.45"/>
 <textstyle name="center" begin="\begin{center}" end="\end{center}"/>
@@ -3746,7 +3746,6 @@ h
 <text matrix="1 0 0 1 -22 -1" pos="24 232" stroke="white" type="label" width="390.457" height="9.4388" depth="0.224" valign="center" size="tiny">\algoinst</text>
 <text matrix="1 0 0 1 149 -29.5" transformations="translations" pos="608 -16" stroke="white" type="label" width="105.167" height="13.244" depth="0.176" halign="right" valign="center" size="small">\bf www.kit.edu</text>
 </group>
-<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 0}</text>
 <path layer="title" matrix="1.16312 0 0 1.16308 -16.113 -637.996" stroke="KITcyanblue" fill="KITcyanblue50">
 240 608 m
 32.0006 0 0 -32.0006 240 640.001 219.549 615.388 a
@@ -3844,6 +3843,7 @@ h
 416 648 l
 </path>
 </group>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 0}</text>
 </page>
 <page title="Problem">
 <layer name="alpha"/>
@@ -6055,7 +6055,7 @@ h
 <layer name="alpha"/>
 <layer name="pagenumbers_page" edit="no"/>
 <view layers="alpha pagenumbers_page" active="alpha"/>
-<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="95.5083" depth="83.4715" valign="top">\begin{itemize}
+<text layer="alpha" transformations="translations" pos="0 440" stroke="KITblack" type="minipage" width="736" height="95.5084" depth="83.4715" valign="top">\begin{itemize}
 \item $g$: number of ghosts
 \item $c$: number of candidates
 \item $k$: number of trajectory line segments
@@ -6066,5 +6066,12 @@ h
 \item Query: $O(c\cdot k)$
 \item Update: $O(g)$</text>
 <text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="11.7208" height="7.5578" depth="0.184" halign="center" valign="top" size="verytiny">{\bf 10}</text>
+</page>
+<page>
+<layer name="alpha"/>
+<layer name="pagenumbers_page" edit="no"/>
+<view layers="alpha pagenumbers_page" active="alpha"/>
+<text layer="alpha" matrix="1 0 0 1 0 -208" transformations="translations" pos="0 432" stroke="black" type="minipage" width="736" height="18.3568" depth="7.392" valign="top" size="LARGE" style="center">Demo</text>
+<text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="11.7208" height="7.5463" depth="0" halign="center" valign="top" size="verytiny">{\bf 11}</text>
 </page>
 </ipe>
