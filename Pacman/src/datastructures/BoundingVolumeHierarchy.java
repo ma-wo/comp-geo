@@ -12,18 +12,18 @@ public class BoundingVolumeHierarchy {
 		public Node rightChild;
 		public BoundingBox boundingBox;
 		public Polygon p;
-		
+				
 		public boolean isChild() {
 			return leftChild == null && rightChild == null;
 		}
 		
 	}
 	
-	private Node root;
+	private Node root;	
 	
 	public BoundingVolumeHierarchy(List<Polygon> polygons) {		
 		root = new Node();		
-		build(root, polygons);
+		build(root, polygons, true);		
 	}
 	
 	public boolean insidePolygon(Point p) {
@@ -71,7 +71,7 @@ public class BoundingVolumeHierarchy {
 		return false;
 	}
 	
-	private void build(Node node, List<Polygon> polygons) {		
+	private void build(Node node, List<Polygon> polygons, boolean sortX) {		
 		BoundingBox boundingBox = new BoundingBox(polygons.get(0).getBoundingBox());
 		for (Polygon p : polygons) {
 			boundingBox.extend(p.getBoundingBox());
@@ -81,8 +81,12 @@ public class BoundingVolumeHierarchy {
 		
 		Collections.sort(polygons, new Comparator<Polygon>(){
 			@Override
-			public int compare(Polygon p1, Polygon p2) {				
-				return Integer.compare(p1.getCentroid().x, p2.getCentroid().x);
+			public int compare(Polygon p1, Polygon p2) {
+				if (sortX) {
+					return Integer.compare(p1.getCentroid().x, p2.getCentroid().x);
+				} else {
+					return Integer.compare(p1.getCentroid().y, p2.getCentroid().y);
+				}				
 			}
 		});
 		
@@ -95,8 +99,8 @@ public class BoundingVolumeHierarchy {
 			node.leftChild = new Node();
 			node.rightChild = new Node();
 			
-			build(node.leftChild, leftPolygons);
-			build(node.rightChild, rightPolygons);			
+			build(node.leftChild, leftPolygons, !sortX);
+			build(node.rightChild, rightPolygons, !sortX);
 		} else {
 			Node leftChild = new Node();
 			leftChild.p = polygons.get(0);
