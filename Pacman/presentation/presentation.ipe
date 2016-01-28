@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.9">
-<info created="D:20090429144355" modified="D:20160127115743" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
+<info created="D:20090429144355" modified="D:20160128174124" title="Ghosts Activate On Smell" author="Michael Wegner, Matthias Wolf"/>
 <preamble>\usepackage[utf8]{inputenc}
 \usepackage{amsmath,amssymb}
 %\usepackage{german}
@@ -3859,6 +3859,231 @@ h
 \end{itemize}</text>
 <text transformations="translations" pos="0 256" stroke="black" type="minipage" width="736" height="16.932" depth="4.704" valign="top">\textbf{Output:} For all time steps: All ghosts that smell Pacman</text>
 <text layer="pagenumbers_page" matrix="1 0 0 1 0.5 5.358" transformations="translations" pos="-13 -39" stroke="black" type="label" width="5.8604" height="7.5463" depth="0" halign="center" valign="top" size="verytiny">{\bf 1}</text>
+<path layer="alpha" matrix="1 0 0 1 112 8" stroke="KITblack" fill="KITblack50">
+64 84 m
+64 128 l
+84 140 l
+112 124 l
+108 96 l
+84 68 l
+64 84 l
+</path>
+<path matrix="1 0 0 1 112 8" stroke="KITblack" fill="KITblack50">
+212 160 m
+212 100 l
+244 100 l
+244 136 l
+264 136 l
+260 160 l
+212 160 l
+</path>
+<path matrix="1 0 0 1 112 8" stroke="KITblack" fill="KITblack50">
+412 100 m
+412 68 l
+432 68 l
+432 104 l
+432 140 l
+460 140 l
+460 160 l
+384 160 l
+396 136 l
+396 96 l
+412 100 l
+</path>
+<path matrix="1 0 0 1 112 8" stroke="KITblack" fill="KITblack50">
+284 80 m
+280 44 l
+328 32 l
+328 84 l
+308 64 l
+304 96 l
+284 80 l
+</path>
+<path matrix="1 0 0 1 112 8" stroke="KITblack" fill="KITblack50">
+128 48 m
+128 16 l
+192 16 l
+192 48 l
+128 48 l
+</path>
+<group matrix="0.332343 0 0 0.332343 253.668 -18.4629">
+<group matrix="1 0 0 1 96 -416">
+<path fill="gold">
+160 752 m
+35.7771 0 0 35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+160 720 m
+35.7771 0 0 -35.7771 128 736 92.2229 736 a
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 752 l
+92.2229 736 l
+</path>
+<path fill="gold">
+92.2229 736 m
+128 736 l
+128 720 l
+</path>
+<path fill="gold">
+160 752 m
+128 736 l
+128 752 l
+</path>
+<path fill="gold">
+160 720 m
+128 736 l
+128 720 l
+</path>
+</group>
+<use name="mark/disk(sx)" pos="232 336" size="3" stroke="black"/>
+</group>
+<group matrix="1.38426 0 0 1.38426 -112.729 -350.986">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITcyanblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group matrix="1.38426 0 0 1.38426 175.271 -358.986">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITred">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group matrix="1.38426 0 0 1.38426 251.271 -282.986">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITpalegreen">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group matrix="1.38426 0 0 1.38426 -4.7286 -386.986">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITlilac">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group matrix="1.38426 0 0 1.38426 63.2714 -378.986">
+<path matrix="0.339935 0 0 0.339935 105.934 64.606" stroke="KITblack" fill="KITorange">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.339935 0 0 0.339935 95.056 74.124" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
+<group>
+<path matrix="0.470557 0 0 0.470557 217.911 -177.555" stroke="KITblack" fill="KITblue">
+368 688
+368 704
+384 704
+400 704
+400 688
+400 672
+400 656
+396 672
+392 656
+388 672
+384 656
+380 672
+376 656
+372 672
+368 656 u
+</path>
+<path matrix="0.470557 0 0 0.470557 202.853 -164.379" stroke="black">
+416 660 m
+408 648 l
+416 648 l
+</path>
+</group>
 </page>
 <page title="Model">
 <layer name="alpha"/>
